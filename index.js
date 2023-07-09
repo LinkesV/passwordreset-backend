@@ -16,12 +16,13 @@ app.use(cors({
 
 dotenv.config();
 const port = process.env.PORT;
+const MONGODB = process.env.MONGODB_ATLUS
 const saltrounds = 10; //Bcrypt
 
 
 // Connect to MongoDB 
 
-mongoose.connect("mongodb://0.0.0.0:27017/LoginDetails" , {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGODB , {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log('Connected to MongoDb database')
 })
